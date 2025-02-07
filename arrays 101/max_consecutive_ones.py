@@ -8,7 +8,7 @@ nums[i] is either 0 or 1.
 '''
 class Solution:
     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
-        # Ensure valid nums length
+        # Ensure nums length between 1 and 105
         while True:
             if (1 <= len(nums) <= 10**5):
                 break
