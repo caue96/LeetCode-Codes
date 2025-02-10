@@ -1,17 +1,16 @@
 '''
 Link to the challenge: https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3253/
-You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 
-Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
 
-The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
+Return k.
 
 Constraints:
-nums1.length == m + n
-nums2.length == n
-0 <= m, n <= 200
-1 <= m + n <= 200
--109 <= nums1[i], nums2[j] <= 109
+0 <= nums.length <= 100
+0 <= nums[i] <= 50
+0 <= val <= 100
 '''
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
@@ -52,13 +51,13 @@ class Solution:
         while i >= 0 and j >= 0:
             if nums1[i] > nums2[j]:
                 nums1[k] = nums1[i]
-                i -= 1
+                i = i - 1
             else:
                 nums1[k] = nums2[j]
-                j -= 1
-            k -= 1
+                j = j - 1
+            k = k - 1
 
         while j >= 0:
             nums1[k] = nums2[j]
-            j -= 1
-            k -= 1
+            j = j - 1
+            k = k - 1
