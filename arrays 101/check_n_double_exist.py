@@ -8,7 +8,7 @@ arr[i] == 2 * arr[j]
 
 Constraints:
 2 <= arr.length <= 500
--103 <= arr[i] <= 103
+-10^3 <= arr[i] <= 10^3
 '''
 class Solution:
     def checkIfExist(self, arr: List[int]) -> bool:
