@@ -1,5 +1,7 @@
 '''
 Link to the challenge: https://leetcode.com/explore/learn/card/fun-with-arrays/526/deleting-items-from-an-array/3247/
+AND
+Link to the challenge: https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3575/
 Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 
 Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
