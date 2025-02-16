@@ -1,5 +1,7 @@
 '''
 Link to the challenge: https://leetcode.com/explore/learn/card/fun-with-arrays/521/introduction/3240/
+AND
+Link to the challenge: https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3574/
 Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
 
 Constraints:
