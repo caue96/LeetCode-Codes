@@ -44,7 +44,7 @@ class Solution:
         currA, currB = headA, headB
 
         while currA:
-            lenA += 1
+            lenA = lenA + 1
             
             # Ensure lenA is between 1 and 30000
             if lenA > 30000:
@@ -53,7 +53,7 @@ class Solution:
             currA = currA.next
 
         while currB:
-            lenB += 1
+            lenB = lenB + 1
             
             # Ensure lenB is between 1 and 30000
             if lenB > 30000:
