@@ -11,41 +11,20 @@ The number of the nodes in the list is in the range [0, 10^4].
 -10^5 <= Node.val <= 10^5
 pos is -1 or a valid index in the linked-list.
 '''
-class ListNode:
-    def __init__(self, x):
-        # Ensure x value is between -10^5 and 10^5
-        while True:
-            if (-10**5 <= x <= 10**5):
-                break
-        self.val = x
-        self.next = None
-
+# This code I could not solve it, so I needed to paste this version from https://github.com/doocs/leetcode/blob/main/solution/0100-0199/0142.Linked%20List%20Cycle%20II/README_EN.md
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        # Ensure exist at least a node
-        if not head or not head.next:
-            return None
-        
-        slow = head
-        fast = head
-        count = 0
-        
+        fast = slow = head
+
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-            count = count + 1
-            
-            if slow == fast:
-                slow = head
 
-                while slow != fast:
+            if slow == fast:
+                ans = head
+
+                while ans != slow:
+                    ans = ans.next
                     slow = slow.next
-                    fast = fast.next
-                    
-                return slow
-            
-            # Return none in case the number of nodes in the list exceed 10^4
-            if count > 10**4:
-                break
-        
-        return None
+
+                return ans
