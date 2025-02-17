@@ -22,8 +22,6 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        # Constraint: The number of nodes is in the range [0, 10^4]
- 
         # Ensure exist at least a node
         if not head:
             return False
