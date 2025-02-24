@@ -9,44 +9,18 @@ The number of nodes in each linked list is in the range [1, 100].
 0 <= Node.val <= 9
 It is guaranteed that the list represents a number that does not have leading zeros.
 '''
-class ListNode:
-    def __init__(self, val=0, next=None):
-        # Ensure val is between 0 and 9
-        while True:
-            if (0 <= val <= 9):
-                break
-        self.val = val
-        self.next = next
-
+# This code I could not solve it, so I needed to paste this version from https://github.com/doocs/leetcode/tree/main/solution/0000-0099/0002.Add%20Two%20Numbers
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-         # Ensure the number of nodes in l1 and l2 is in the range 1 and 100
-        def check_list_size(head):
-            size = 0
-            
-            while head:
-                size = size + 1
-                head = head.next
-
-                if size > 100:
-                    break
-
-        check_list_size(l1)
-        check_list_size(l2)
-
-        dummy = ListNode(0)
-        current = dummy
-        carry = 0
+        dummy = ListNode()
+        carry, curr = 0, dummy
 
         while l1 or l2 or carry:
-            val1 = l1.val if l1 else 0
-            val2 = l2.val if l2 else 0
-            total = val1 + val2 + carry
-            carry = total // 10
-            current.next = ListNode(total % 10)
-            current = current.next
-
-            if l1: l1 = l1.next
-            if l2: l2 = l2.next
-
+            s = (l1.val if l1 else 0) + (l2.val if l2 else 0) + carry
+            carry, val = divmod(s, 10)
+            curr.next = ListNode(val)
+            curr = curr.next
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+        
         return dummy.next
