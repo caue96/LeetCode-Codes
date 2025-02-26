@@ -20,6 +20,7 @@ class TreeNode:
 
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+         # Ensure number of nodes is at least 1
         if not root:
             return True
         
