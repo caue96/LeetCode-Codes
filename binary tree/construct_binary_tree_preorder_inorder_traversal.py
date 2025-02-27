@@ -13,7 +13,7 @@ inorder is guaranteed to be the inorder traversal of the tree.
 '''
 # This code I could not solve it, so I needed to paste this version from https://github.com/doocs/leetcode/tree/main/solution/0100-0199/0105.Construct%20Binary%20Tree%20from%20Preorder%20and%20Inorder%20Traversal
 class Solution:
-    def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         def dfs(i: int, j: int, n: int) -> Optional[TreeNode]:
             if n <= 0:
                 return None
@@ -22,9 +22,9 @@ class Solution:
             k = d[v]
             l = dfs(i + 1, j, k - j)
             r = dfs(i + 1 + k - j, k + 1, n - k + j - 1)
-
+            
             return TreeNode(v, l, r)
 
         d = {v: i for i, v in enumerate(inorder)}
-
+        
         return dfs(0, 0, len(preorder))
